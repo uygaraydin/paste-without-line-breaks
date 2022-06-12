@@ -1,0 +1,30 @@
+{
+  "name": "paste-without-line-breaks",
+  "version": "1.0.0",
+  "description": "It converts text in clipboard to plain text without line breaks for Windows and OSX so that text translators such as google translate can better translate the texts.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uygaraydin/paste-without-line-breaks.git"
+  },
+  "keywords": [
+    "paste",
+    "plain",
+    "text",
+    "line",
+    "breaks"
+  ],
+  "author": "Uygar Aydin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/uygaraydin/paste-without-line-breaks/issues"
+  },
+  "homepage": "https://github.com/uygaraydin/paste-without-line-breaks#readme",
+  "devDependencies": {
+    "electron": "^19.0.4"
+  }
+}
