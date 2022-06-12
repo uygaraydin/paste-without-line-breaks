@@ -9,7 +9,8 @@ const createWindow = () => {
     height: 600,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js')
-    }
+    },
+    icon: path.join(__dirname, 'icon.png')
   })
 
   // and load the index.html of the app.
@@ -140,14 +141,16 @@ const template = [
 const menu = Menu.buildFromTemplate(template)
 Menu.setApplicationMenu(menu)
 
-
+if (isMac) {
+  app.dock.setIcon(path.join(__dirname, 'icon.png'));
+}
 
 let appIcon = null
 app.whenReady().then(() => {
-  appIcon = new Tray('favicon-16x16.png')
+  appIcon = new Tray('favicon-16x16@2x.png')
   const contextMenu = Menu.buildFromTemplate([
-    { label: 'Item1', type: 'radio' },
-    { label: 'Item2', type: 'radio' }
+    { label: 'Only Plain Text', type: 'radio' },
+    { label: 'Plaint Text without Line Breaks ', type: 'radio' }
   ])
 
   // Make a change to the context menu

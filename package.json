@@ -26,5 +26,16 @@
   "homepage": "https://github.com/uygaraydin/paste-without-line-breaks#readme",
   "devDependencies": {
     "electron": "^19.0.4"
+  },
+  "build": {
+    "appId": "com.my-website.my-app",
+    "productName": "Paste without Line Breaks",
+    "copyright": "Copyright © 2022",
+    "mac": {
+      "icon": "./icon.png",
+      "extendInfo": {
+        "LSUIElement": true
+      }
+    }
   }
 }
