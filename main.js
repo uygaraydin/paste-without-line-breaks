@@ -1,5 +1,5 @@
 // Modules to control application life and create native browser window
-const { app, BrowserWindow, Menu, Tray } = require('electron')
+const { app, BrowserWindow, Menu, Tray, clipboard } = require('electron')
 const path = require('path')
 
 const createWindow = () => {
@@ -159,3 +159,20 @@ app.whenReady().then(() => {
   // Call this again for Linux because we modified the context menu
   appIcon.setContextMenu(contextMenu)
 })
+
+
+
+let preText = "";
+
+async function CleanText(text) {
+  return (text.replace(/\s+/g, ' ')).trim();
+}
+
+const watcher = setInterval(async () => {
+  let currentText = clipboard.readText();
+  if (currentText !== preText) {
+    const cleanedText = await CleanText(currentText);
+    clipboard.writeText(cleanedText)
+    preText = cleanedText;
+  }
+}, 500)
